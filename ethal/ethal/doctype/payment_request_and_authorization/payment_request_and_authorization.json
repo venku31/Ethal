@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2020-12-01 14:09:43.114648",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "party_type",
+  "party",
+  "payee_name",
+  "payment_reason",
+  "column_break_3",
+  "date_of_request",
+  "date_of_requirement",
+  "payment_request_for",
+  "description_of_requirement_section",
+  "payment_type",
+  "payment_mode",
+  "column_break_9",
+  "amount",
+  "bank",
+  "references_section",
+  "prf_no",
+  "grn_no",
+  "column_break_15",
+  "supporting_documents",
+  "amended_from",
+  "approver_person",
+  "checked_person",
+  "approver_date",
+  "checked_date",
+  "workflow_state",
+  "naming_series"
+ ],
+ "fields": [
+  {
+   "fieldname": "date_of_request",
+   "fieldtype": "Date",
+   "label": "Date of Request"
+  },
+  {
+   "fieldname": "date_of_requirement",
+   "fieldtype": "Date",
+   "label": "Date of Requirement"
+  },
+  {
+   "fetch_from": "party.payee_name",
+   "fieldname": "payee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Payee Name"
+  },
+  {
+   "fieldname": "payment_reason",
+   "fieldtype": "Small Text",
+   "label": "Payment Reason"
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "label": "Payment Type",
+   "options": "\nAdvance\nPartial\nFinal"
+  },
+  {
+   "fieldname": "payment_mode",
+   "fieldtype": "Link",
+   "label": "Payment Mode",
+   "options": "Mode of Payment"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Select",
+   "label": "Bank",
+   "options": "\nCBE\nZemen\nUnited\nCBO\nDebub\nLion\nAwash\nDashen\nEnat\nBOA"
+  },
+  {
+   "fieldname": "references_section",
+   "fieldtype": "Section Break",
+   "label": "REFERENCES"
+  },
+  {
+   "fieldname": "prf_no",
+   "fieldtype": "Table MultiSelect",
+   "label": "PRF NO",
+   "options": "PRF"
+  },
+  {
+   "fieldname": "grn_no",
+   "fieldtype": "Table MultiSelect",
+   "label": "GRN NO",
+   "options": "GRN"
+  },
+  {
+   "fieldname": "supporting_documents",
+   "fieldtype": "Small Text",
+   "label": "Supporting Documents"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment Request and Authorization",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "approver_person",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Approver Person"
+  },
+  {
+   "fieldname": "checked_person",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Checked Person"
+  },
+  {
+   "fieldname": "checked_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Checked Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Workflow State",
+   "no_copy": 1,
+   "options": "Workflow State"
+  },
+  {
+   "fieldname": "approver_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Approver Date"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "PRA-HO-.YYYY.-",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description_of_requirement_section",
+   "fieldtype": "Section Break",
+   "label": "Description of Requirement"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "label": "Party",
+   "options": "party_type"
+  },
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Link",
+   "label": "Party Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "payment_request_for",
+   "fieldtype": "Select",
+   "label": "Payment Request For",
+   "options": "\nPacking Material"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-07-28 10:36:49.061156",
+ "modified_by": "Administrator",
+ "module": "Ethal",
+ "name": "Payment Request and Authorization",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
